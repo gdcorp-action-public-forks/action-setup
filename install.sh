@@ -21,6 +21,8 @@ fi
 
 mkdir -p "${TEMP}/reviewdog/bin"
 
+git config --global --add safe.directory $GITHUB_WORKSPACE
+
 echo '::group::🐶 Installing reviewdog ... https://github.com/reviewdog/reviewdog'
 curl -sfL "${INSTALL_SCRIPT}" | sh -s -- -b "${TEMP}/reviewdog/bin" "${VERSION}" 2>&1
 echo '::endgroup::'
